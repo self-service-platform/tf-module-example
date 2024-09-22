@@ -15,7 +15,4 @@ resource "local_file" "example_file" {
   filename = "${var.directory_path}/${var.file_path}"
   content  = var.file_content
   file_permission = "0644"
-
-  # Ensure the directory is created before the file
-  depends_on = [local_file.example_directory]
 }
