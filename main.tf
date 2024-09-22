@@ -10,12 +10,6 @@ terraform {
 provider "local" {
 }
 
-# Create a directory
-resource "local_file" "example_directory" {
-  filename = "${var.directory_path}/"
-  directory_permission = "0755"
-}
-
 # Create a file inside the directory
 resource "local_file" "example_file" {
   filename = "${var.directory_path}/${var.file_path}"
