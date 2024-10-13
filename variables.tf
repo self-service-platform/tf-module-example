@@ -29,4 +29,30 @@ variable "complex_variable" {
       scale = bool
     })
   })
+  
+  default = {
+    name     = "default_name"
+    enabled  = true
+    retries  = 3
+    settings = {
+      setting1 = {
+        speed        = 100
+        acceleration = true
+      }
+      setting2 = {
+        speed        = 50
+        acceleration = false
+      }
+    }
+    map = {
+      key1 = "value1"
+      key2 = "value2"
+    }
+    tags = ["tag1", "tag2", "tag3"]
+    config = {
+      size  = 10
+      scale = true
+    }
+  }
 }
+
