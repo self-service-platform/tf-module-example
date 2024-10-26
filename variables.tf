@@ -3,6 +3,10 @@ variable "file_path" {
   type        = string
 }
 
+variable "env_test" {
+  type        = string
+}
+
 variable "file_content" {
   description = "The content of the file"
   type        = string

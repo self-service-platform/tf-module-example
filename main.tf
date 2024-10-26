@@ -13,6 +13,6 @@ provider "local" {
 # Create a file inside the directory
 resource "local_file" "example_file" {
   filename = "${var.directory_path}/${var.file_path}"
-  content  = var.file_content
+  content  = "${var.file_content} -- ${var.env_test}"
   file_permission = "0644"
 }
