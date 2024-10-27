@@ -15,6 +15,13 @@ variable "file_content" {
 variable "directory_path" {
   description = "The path where the directory will be created"
   type        = string
+  description = <<EOD
+This variable specifies the names of the databases.
+@options_from_function
+function getList() {
+  return ['value1', 'value2'];
+}
+EOD
 }
 
 variable "complex_variable" {
