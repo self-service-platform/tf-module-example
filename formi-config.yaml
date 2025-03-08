@@ -13,7 +13,7 @@ review_required:
 credentials:
   - type: github_app
     options:
-      - name: "repositories"
+      - name: "github-repositories"
         org: 1
         project: 1
     others_allowed: false
