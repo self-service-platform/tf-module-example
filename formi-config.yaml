@@ -22,9 +22,9 @@ deployment_variables:
     description: "Subscription ID for deployment"
 environment_variables:
   - name: ARM_CLIENT_ID
-    input: github_app.client_id
+    input: github_app.app_id
   - name: ARM_CLIENT_SECRET
-    input: github_app.secret_id
+    input: github_app.private_key
   - name: ARM_SUBSCRIPTION_ID
     input: deployment.ARM_SUBSCRIPTION_ID
 external_modules:
