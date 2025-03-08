@@ -1,0 +1,34 @@
+variables:
+  file_path:
+    options: ["option1", "option2", "option3"]
+    addable: true
+  env_test:
+    options: ["dev", "ref", "int"]
+    addable: true
+review_required:
+  - when: file_path == "option1"
+    by:
+      - "user1"
+      - "user2"
+credentials:
+  - type: github_app
+    options:
+      - name: "repositories"
+        org: 1
+        project: 1
+    others_allowed: false
+deployment_variables:
+  - name: ARM_SUBSCRIPTION_ID
+    description: "Subscription ID for deployment"
+environment_variables:
+  - name: ARM_CLIENT_ID
+    input: github_app.client_id
+  - name: ARM_CLIENT_SECRET
+    input: github_app.secret_id
+  - name: ARM_SUBSCRIPTION_ID
+    input: deployment.ARM_SUBSCRIPTION_ID
+external_modules:
+  - module_name: "ex_module1"
+    variable_name: "ex_module1_outputs"
+    # Outputs of ex_module1 one will passed as map[deployment_instance]Outputs
+    # TF Variable ex_module1_outputs has to match this type.
