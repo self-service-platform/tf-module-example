@@ -14,8 +14,8 @@ credentials:
   - type: github_app
     options:
       - name: "github-repositories"
-        org: 1
-        project: 1
+        organization_id: 1
+        project_id: 1
     others_allowed: false
 deployment_variables:
   - name: ARM_SUBSCRIPTION_ID
