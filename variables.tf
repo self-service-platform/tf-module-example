@@ -1,18 +1,24 @@
-variable "file_path" {
-  description = "The path where the file will be created"
+variable "repo_name" {
   type        = string
+  description = "The name of the repository"
 }
 
-variable "env_test" {
+variable "description" {
   type        = string
+  description = "The description of the repository"
 }
 
-variable "file_content" {
-  description = "The content of the file"
-  type        = string
+variable "public" {
+  type        = bool
+  description = "Whether the repository is public"
 }
 
-variable "directory_path" {
+variable "token" {
   type        = string
-  description = "The path where the directory will be created"
+  description = "The token for the GitHub API"
+}
+
+variable "github_organization" {
+  type        = string
+  description = "The organization name"
 }

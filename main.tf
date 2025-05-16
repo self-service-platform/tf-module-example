@@ -1,18 +1,20 @@
 terraform {
   required_version = "~> 1.7"
   required_providers {
-    local = {
-      source = "hashicorp/local"
-      version = "2.5.1"
+    github = {
+      source  = "integrations/github"
+      version = "~> 6.0"
     }
   }
 }
-provider "local" {
+
+provider "github" {
+  owner = var.github_organization
+  token = var.token
 }
 
-# Create a file inside the directory
-resource "local_file" "example_file" {
-  filename = "${var.directory_path}/${var.file_path}"
-  content  = "${var.file_content} -- ${var.env_test}"
-  file_permission = "0644"
+resource "github_repository" "this" {
+  name        = var.repo_name
+  description = var.description
+  visibility  = var.public ? "public" : "private"
 }

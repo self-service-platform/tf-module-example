@@ -1,4 +1,4 @@
-output "created_file_path" {
-  description = "The path of the created file"
-  value       = local_file.example_file.filename
+output "repo_url" {
+  description = "The URL of the repository"
+  value       = github_repository.this.html_url
 }
